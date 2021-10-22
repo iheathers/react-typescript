@@ -9,33 +9,37 @@ interface AppState {
   counter: number;
 }
 
-class App extends React.Component<AppProps, AppState> {
-  // state = { counter: 0 };
+const App = (props: AppProps): JSX.Element => {
+  return <div>{props.color}</div>;
+};
 
-  constructor(props: AppProps) {
-    super(props);
+// class App extends React.Component<AppProps, AppState> {
+//   // state = { counter: 0 };
 
-    this.state = { counter: 0 };
-  }
+//   constructor(props: AppProps) {
+//     super(props);
 
-  handleIncrement = () => {
-    this.setState({ counter: this.state.counter + 1 });
-  };
+//     this.state = { counter: 0 };
+//   }
 
-  handleDecrement = () => {
-    this.setState({ counter: this.state.counter - 1 });
-  };
+//   handleIncrement = () => {
+//     this.setState({ counter: this.state.counter + 1 });
+//   };
 
-  render() {
-    return (
-      <div>
-        <button onClick={this.handleIncrement}>Increment</button>
-        <button onClick={this.handleDecrement}>Decrement</button>
+//   handleDecrement = () => {
+//     this.setState({ counter: this.state.counter - 1 });
+//   };
 
-        <button>{this.state.counter}</button>
-      </div>
-    );
-  }
-}
+//   render() {
+//     return (
+//       <div>
+//         <button onClick={this.handleIncrement}>Increment</button>
+//         <button onClick={this.handleDecrement}>Decrement</button>
 
-ReactDOM.render(<App />, document.querySelector('#root'));
+//         <button>{this.state.counter}</button>
+//       </div>
+//     );
+//   }
+// }
+
+ReactDOM.render(<App color="red" />, document.querySelector('#root'));
